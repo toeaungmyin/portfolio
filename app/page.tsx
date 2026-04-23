@@ -1,7 +1,20 @@
+import Hero from "@/components/sections/hero";
+import Skills from "@/components/sections/skills";
+import Experience from "@/components/sections/experience";
+import Projects from "@/components/sections/projects";
+import Blog from "@/components/sections/blog";
+import FAQs from "@/components/sections/faqs";
+import Contact from "@/components/sections/contact";
+
 export default function Home() {
 	return (
-		<div className="flex flex-col items-center justify-center h-screen">
-			<h1 className="text-4xl font-bold">Hello World</h1>
-		</div>
+		<>
+			<Hero />
+			<Skills />
+			<Experience />
+			<Projects />
+			<FAQs />
+			<Contact />
+		</>
 	);
 }
