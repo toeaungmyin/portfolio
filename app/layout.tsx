@@ -10,6 +10,7 @@ import { AppMotionProvider } from "@/components/providers/app-motion";
 import { NoiseOverlay } from "@/components/ui/noise-overlay";
 import { GridLines } from "@/components/ui/grid-lines";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
 			<body className="dark min-h-full flex flex-col bg-black text-white selection:bg-white selection:text-black">
 				<SiteJsonLd />
 				<Analytics />
+				<SpeedInsights />
 				<AppMotionProvider>
 					<NoiseOverlay />
 					<GridLines />
