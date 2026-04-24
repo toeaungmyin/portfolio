@@ -45,6 +45,10 @@ export const metadata: Metadata = {
 	creator: "Toe Aung Myin",
 	robots: { index: true, follow: true },
 	alternates: { canonical: "/" },
+	icons: {
+		icon: [{ url: "/logo.png", type: "image/png" }],
+		apple: "/logo.png",
+	},
 	openGraph: {
 		title: siteTitleDefault,
 		description: siteDescription,
