@@ -9,6 +9,7 @@ import { SiteJsonLd } from "@/components/seo/site-json-ld";
 import { AppMotionProvider } from "@/components/providers/app-motion";
 import { NoiseOverlay } from "@/components/ui/noise-overlay";
 import { GridLines } from "@/components/ui/grid-lines";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -70,12 +71,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html
-			lang="en"
-			className={cn("h-full", "antialiased", inter.variable, outfit.variable, "font-sans")}
-		>
+		<html lang="en" className={cn("h-full", "antialiased", inter.variable, outfit.variable, "font-sans")}>
 			<body className="dark min-h-full flex flex-col bg-black text-white selection:bg-white selection:text-black">
 				<SiteJsonLd />
+				<Analytics />
 				<AppMotionProvider>
 					<NoiseOverlay />
 					<GridLines />
