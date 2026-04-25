@@ -1,9 +1,10 @@
-export const siteTitleDefault = "Toe Aung Myin — Software Engineer";
-export const siteDescription =
-	"Software Engineer specializing in high-transaction, multi-tenant architectures.";
+import { profile } from "./content";
+
+export const siteTitleDefault = `${profile.name} — ${profile.roles[0]}`;
+export const siteDescription = `${profile.summary} | ${profile.name}`;
 
 /** Public production domain (custom domain on Vercel or elsewhere). */
-export const canonicalSiteOrigin = "https://toeaungmyin.me";
+export const canonicalSiteOrigin = "https://www.toeaungmyin.me";
 
 /**
  * Canonical site origin for metadata, sitemap, and robots.
