@@ -62,7 +62,7 @@ export default function SiteFooter() {
 							</span>
 						</Link>
 						<p className="max-w-sm text-sm font-light leading-relaxed text-[#a3a3a3]">
-							<span className="font-medium text-secondary/90">{profile.role}</span>
+							<span className="font-medium text-secondary/90">{profile.roles[0]}</span>
 							<span className="mx-2 text-white/35">·</span>
 							{profile.summary.split(".")[0]}.
 						</p>
