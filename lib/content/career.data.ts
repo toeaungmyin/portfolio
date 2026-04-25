@@ -45,9 +45,6 @@ export const education = [
 		organization: "University of Computer Studies, Mandalay",
 		location: "Mandalay, Myanmar",
 		duration: "2019 – Present",
-		description: [
-			"Major: Software Engineering",
-			"Coursework completes Mar 2026; degree expected 2027 — available full-time from coursework completion",
-		],
+		description: ["Major: Software Engineering"],
 	},
 ];

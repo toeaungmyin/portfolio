@@ -1,3 +1,4 @@
+import { Hatch } from "@/components/common/hatch";
 import Hero from "@/components/sections/hero";
 import Skills from "@/components/sections/skills";
 import Experience from "@/components/sections/experience";
@@ -9,11 +10,17 @@ export default function Home() {
 	return (
 		<>
 			<Hero />
+			<Hatch />
 			<Skills />
+			<Hatch />
 			<Experience />
+			<Hatch />
 			<Projects />
+			<Hatch />
 			<FAQs />
+			<Hatch />
 			<Contact />
+			<Hatch />
 		</>
 	);
 }

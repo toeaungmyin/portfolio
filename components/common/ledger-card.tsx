@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 /** Outer surface: dark card on black — use on motion/Link wrappers */
 export const shellClass =
-	"group relative flex flex-col bg-[#0c0c0c] border border-white/14 rounded-[2.5rem] overflow-visible hover:border-transparent transition-all duration-700";
+	"group relative flex flex-col bg-[#0c0c0c] border border-white/14 rounded-[2.5rem] overflow-visible transition-all duration-700 hover:border-secondary/25";
 
 /** Inner padded content area */
 export const bodyClass =

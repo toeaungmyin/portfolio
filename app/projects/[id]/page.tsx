@@ -14,7 +14,7 @@ type PageProps = {
 
 function SectionTitle({ children }: { children: ReactNode }) {
 	return (
-		<h2 className="mb-4 text-[11px] font-black uppercase tracking-[0.32em] text-neutral-300">{children}</h2>
+		<h2 className="mb-4 text-[11px] font-black uppercase tracking-[0.32em] text-secondary/90">{children}</h2>
 	);
 }
 
@@ -77,9 +77,9 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 			<div className="mx-auto max-w-3xl">
 				<Link
 					href="/#projects"
-					className="mb-8 inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-neutral-300 transition-colors hover:text-white sm:mb-12 md:mb-16"
+					className="mb-8 inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-neutral-300 transition-colors hover:text-secondary sm:mb-12 md:mb-16"
 				>
-					<ArrowLeft className="w-3 h-3" />
+					<ArrowLeft className="w-3 h-3 text-secondary/80" />
 					All projects
 				</Link>
 

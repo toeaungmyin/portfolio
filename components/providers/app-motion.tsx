@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionConfig } from "framer-motion";
+import { MotionConfig } from "motion/react";
 
 /**
  * `reducedMotion="user"` maps OS “reduce motion” to shorter Framer animations.

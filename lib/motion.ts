@@ -1,7 +1,13 @@
-import type { Transition } from "framer-motion";
+import type { Transition } from "motion/react";
 
 /** Shared easing (matches existing sections) */
 export const EASE_OUT_STRONG: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+/** Hero section intro: single timing curve for above-the-fold stagger */
+export const introTransition: Transition = {
+	duration: 0.75,
+	ease: EASE_OUT_STRONG,
+};
 
 /**
  * Scroll-triggered reveals: run once, fire slightly before full entry to feel snappier.
@@ -23,8 +29,4 @@ export function revealTransition(
 		duration,
 		ease: EASE_OUT_STRONG,
 	};
-}
-
-export function revealTransitionShort(index: number): Transition {
-	return revealTransition(index, { stagger: 0.1, duration: 0.55 });
 }
