@@ -130,7 +130,7 @@ export default function Hero() {
 							className="group h-16 rounded-full border-white/[0.1] bg-white/[0.02] px-10 text-xs font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-white/[0.05]"
 							asChild
 						>
-							<a href="/resume.pdf" download>
+							<a href="/Toe Aung Myin - Resume.pdf" target="_blank" download>
 								<Download className="mr-3 h-4 w-4 transition-transform group-hover:-translate-y-1" />
 								Resume
 							</a>
