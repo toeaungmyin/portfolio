@@ -69,7 +69,7 @@ export function ExperienceTimelineItem({ item, index }: ExperienceTimelineItemPr
 				</ul>
 			</div>
 
-			<div className="absolute bottom-0 left-0 top-0 w-px bg-white/0 transition-colors duration-500 group-hover:bg-secondary/50" />
+			<div className="absolute bottom-0 left-0 top-0 w-px bg-white/0 transition-all duration-500 group-hover:w-1 group-hover:bg-secondary/50" />
 		</motion.div>
 	);
 }

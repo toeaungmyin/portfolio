@@ -6,7 +6,7 @@ export default function Skills() {
 		<section id="skills" className="relative bg-black py-24 sm:py-32 lg:py-40">
 			<div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
 				<SectionIntroStack
-					eyebrow="System Inventory"
+					eyebrow="TECH STACK"
 					title="Capabilities"
 					titleClassName="text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl"
 				/>
