@@ -6,8 +6,9 @@ import {
 	SKILL_GRAPH_NODE_WIDTH,
 	type SkillGraphNodeData,
 	type SkillGraphTone,
-} from "@/lib/skills-graph-build";
-import { parseShieldsIoBadgeStyle, skillBrandIconUrl } from "@/lib/shield-badge-style";
+	parseShieldsIoBadgeStyle,
+	skillBrandIconUrl,
+} from "@/lib/skills";
 import { cn } from "@/lib/utils";
 import { Boxes, Cloud, Code2, Database, Monitor, Server, type LucideIcon } from "lucide-react";
 

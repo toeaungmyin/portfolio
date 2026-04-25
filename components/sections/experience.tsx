@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { profile } from "@/lib/data";
 import { Briefcase, GraduationCap } from "lucide-react";
-import { SectionHeader } from "@/components/shared/section-header";
+import { SectionHeader } from "@/components/common/section-header";
 import { revealTransition, viewportReveal } from "@/lib/motion";
 
 export default function Experience() {
@@ -14,13 +14,13 @@ export default function Experience() {
 	];
 
 	return (
-		<section id="experience" className="section-box border-t bg-black py-32">
-			<div className="mx-auto max-w-6xl px-4">
+		<section id="experience" className="section-box border-t bg-black py-16 sm:py-24 lg:py-32">
+			<div className="mx-auto max-w-6xl px-5 sm:px-6">
 				<SectionHeader
 					eyebrow="Chronological Record"
 					title={
 						<>
-							Career Path <span className="text-white/10">/</span>
+							Career Path <span className="text-white/25">/</span>
 						</>
 					}
 					description="A strictly chronological view of my professional and academic background."
@@ -34,13 +34,13 @@ export default function Experience() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={viewportReveal}
 							transition={revealTransition(index, { duration: 0.6 })}
-							className="group relative grid grid-cols-1 gap-8 rounded-none border-t px-4 py-14 transition-all duration-500 last:border-b hover:bg-white/[0.015] md:grid-cols-12 -mx-4"
+							className="group relative -mx-5 grid grid-cols-1 gap-6 rounded-none border-t px-6 py-10 transition-all duration-500 last:border-b hover:bg-white/[0.015] sm:-mx-6 sm:gap-8 sm:px-6 sm:py-12 md:grid-cols-12 md:py-14"
 						>
 							<div className="flex flex-col gap-3 md:col-span-3">
 								<div className="flex items-center gap-2">
 									<span
 										className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md ${
-											item.type === "work" ? "bg-white/5 text-white/40" : "bg-white/5 text-white/25"
+											item.type === "work" ? "bg-white/5 text-white/55" : "bg-white/5 text-white/40"
 										}`}
 									>
 										{item.type === "work" ? (
@@ -49,7 +49,7 @@ export default function Experience() {
 											<GraduationCap className="h-2.5 w-2.5" />
 										)}
 									</span>
-									<span className="text-[9px] font-black uppercase tracking-[0.3em] text-ink-label transition-colors duration-500 group-hover:text-[#6a6a6a]">
+									<span className="text-[9px] font-black uppercase tracking-[0.3em] text-ink-label transition-colors duration-500 group-hover:text-[#9a9a9a]">
 										{item.type === "work" ? "Work" : "Education"}
 									</span>
 								</div>
@@ -59,10 +59,10 @@ export default function Experience() {
 							</div>
 
 							<div className="md:col-span-4">
-								<h3 className="mb-2 text-2xl font-black tracking-tighter text-white transition-transform duration-500 group-hover:translate-x-1">
+								<h3 className="mb-2 text-xl font-black tracking-tighter text-white transition-transform duration-500 group-hover:translate-x-1 sm:text-2xl">
 									{item.title}
 								</h3>
-								<p className="text-xs font-bold uppercase tracking-[0.2em] text-[#444444] transition-colors duration-500 group-hover:text-[#777777]">
+								<p className="text-xs font-bold uppercase tracking-[0.2em] text-[#7a7a7a] transition-colors duration-500 group-hover:text-[#a3a3a3]">
 									{item.organization}
 								</p>
 								{item.location ? (
@@ -77,7 +77,7 @@ export default function Experience() {
 									{item.description.map((desc, i) => (
 										<li
 											key={i}
-											className="flex items-start text-sm font-light leading-relaxed text-[#555555] transition-colors duration-500 group-hover:text-[#999999]"
+											className="flex items-start text-sm font-light leading-relaxed text-[#a3a3a3] transition-colors duration-500 group-hover:text-[#c4c4c4]"
 										>
 											<span className="mr-4 mt-2 block h-[3px] w-[3px] shrink-0 rounded-full bg-ink-bullet transition-colors duration-500 group-hover:bg-white/40" />
 											<span>{desc}</span>
@@ -86,7 +86,7 @@ export default function Experience() {
 								</ul>
 							</div>
 
-							<div className="absolute bottom-0 left-0 top-0 w-px bg-white/0 transition-colors duration-500 group-hover:bg-white/10" />
+							<div className="absolute bottom-0 left-0 top-0 w-px bg-white/0 transition-colors duration-500 group-hover:bg-white/18" />
 						</motion.div>
 					))}
 				</div>

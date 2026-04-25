@@ -44,7 +44,7 @@ export default function Hero() {
 	return (
 		<section
 			id="hero"
-			className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black"
+			className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-black pt-[max(5rem,env(safe-area-inset-top))] pb-8 sm:pb-10"
 		>
 			{!reduceMotion ? (
 				<div
@@ -66,14 +66,14 @@ export default function Hero() {
 				/>
 			</motion.div>
 
-			<div className="relative z-10 mx-auto w-full max-w-6xl px-4">
+			<div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-6">
 				<div className="flex flex-col items-center text-center">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={introTransition}
 					>
-						<span className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em] text-ink-label backdrop-blur-md">
+						<span className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.25em] text-ink-label backdrop-blur-md sm:mb-8 sm:px-4 sm:py-2 sm:text-[10px] sm:tracking-[0.3em]">
 							<span
 								className={`h-1.5 w-1.5 rounded-full bg-white ${reduceMotion ? "" : "animate-pulse"}`}
 							/>
@@ -85,12 +85,12 @@ export default function Hero() {
 						initial={{ opacity: 0, y: 40 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ ...introTransition, delay: 0.08 }}
-						className="mb-10 text-6xl font-black leading-[0.85] tracking-tighter text-white sm:text-8xl lg:text-[10rem]"
+						className="mb-6 flex w-full max-w-full flex-wrap justify-center gap-x-3 gap-y-1 text-4xl font-black leading-[0.92] tracking-tighter text-white min-[400px]:text-5xl sm:mb-10 sm:gap-x-4 sm:gap-y-0 sm:text-6xl sm:leading-[0.85] md:text-8xl lg:text-[10rem]"
 					>
 						{profile.name.split(" ").map((word, i) => (
 							<span
 								key={i}
-								className={`mr-6 inline-block last:mr-0 ${i % 2 !== 0 ? "text-white/30" : "text-white"}`}
+								className={`${i % 2 !== 0 ? "text-white/50" : "text-white"}`}
 							>
 								{word}
 							</span>
@@ -101,7 +101,7 @@ export default function Hero() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ ...introTransition, delay: 0.16 }}
-						className="mb-16 max-w-2xl text-balance text-xl font-light leading-relaxed tracking-tight text-[#888888] sm:text-2xl"
+						className="mb-10 max-w-2xl text-balance px-0.5 text-base font-light leading-relaxed tracking-tight text-[#b0b0b0] sm:mb-16 sm:text-xl md:text-2xl"
 					>
 						Specializing in <span className="font-medium text-white">high-transaction</span>, multi-tenant
 						architectures. Designing robust systems for global scalability.
@@ -111,11 +111,11 @@ export default function Hero() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ ...introTransition, delay: 0.24 }}
-						className="flex flex-col items-center gap-6 sm:flex-row"
+						className="flex w-full max-w-md flex-col items-stretch gap-4 sm:max-w-none sm:flex-row sm:items-center sm:justify-center sm:gap-6"
 					>
 						<Button
 							size="lg"
-							className="group h-16 rounded-full bg-white px-10 text-xs font-black uppercase tracking-[0.2em] text-black transition-all hover:bg-[#EDEDED]"
+							className="group h-14 w-full rounded-full bg-white px-8 text-xs font-black uppercase tracking-[0.2em] text-black transition-all hover:bg-[#EDEDED] sm:h-16 sm:w-auto sm:px-10"
 							asChild
 						>
 							<a href="#projects">
@@ -127,7 +127,7 @@ export default function Hero() {
 						<Button
 							variant="outline"
 							size="lg"
-							className="group h-16 rounded-full border-white/[0.1] bg-white/[0.02] px-10 text-xs font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-white/[0.05]"
+							className="group h-14 w-full rounded-full border-white/[0.1] bg-white/[0.02] px-8 text-xs font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-white/[0.05] sm:h-16 sm:w-auto sm:px-10"
 							asChild
 						>
 							<a href="/Toe Aung Myin - Resume.pdf" target="_blank" download>
@@ -143,16 +143,16 @@ export default function Hero() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: reduceMotion ? 0 : 0.85, duration: reduceMotion ? 0.2 : 0.6 }}
-				className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3"
+				className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 [padding-bottom:max(0.5rem,env(safe-area-inset-bottom))] sm:bottom-10 sm:gap-3"
 			>
 				<span className="text-[9px] font-black uppercase tracking-[0.5em] text-ink-label">Scroll</span>
 				{reduceMotion ? (
-					<div className="h-10 w-px bg-gradient-to-b from-white/25 to-transparent" />
+					<div className="h-10 w-px bg-gradient-to-b from-white/40 to-transparent" />
 				) : (
 					<motion.div
 						animate={{ y: [0, 6, 0] }}
 						transition={{ duration: 1.8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-						className="h-10 w-px bg-gradient-to-b from-white/25 to-transparent"
+						className="h-10 w-px bg-gradient-to-b from-white/40 to-transparent"
 					/>
 				)}
 			</motion.div>

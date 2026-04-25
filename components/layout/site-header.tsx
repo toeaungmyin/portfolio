@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -16,7 +15,7 @@ type NavItem = {
 	pagePrefix?: string;
 };
 
-/** Document order must match the home page stack (ids may be missing, e.g. blog on /). */
+/** Document order must match the home page section stack. */
 const HOME_SECTION_IDS = ["hero", "skills", "experience", "projects", "faqs", "contact"] as const;
 
 export default function SiteHeader() {
@@ -94,11 +93,11 @@ export default function SiteHeader() {
 	return (
 		<header
 			ref={headerRef}
-			className={`fixed top-0 z-[100] w-full transition-all duration-500 ${scrolled ? "py-4" : "py-8"}`}
+			className={`fixed top-0 z-100 w-full transition-all duration-500 [padding-top:max(0.5rem,env(safe-area-inset-top))] ${scrolled ? "pb-2 sm:pb-4" : "pb-3 sm:pb-6 md:pb-8"}`}
 		>
-			<div className="mx-auto max-w-6xl px-4">
+			<div className="mx-auto max-w-6xl px-5 sm:px-6">
 				<div
-					className={`flex h-16 items-center justify-between rounded-full px-6 transition-all duration-500 ${
+					className={`flex h-14 min-h-14 items-center justify-between rounded-full px-4 transition-all duration-500 sm:h-16 sm:min-h-16 sm:px-6 ${
 						scrolled ? "glass shadow-2xl shadow-white/5" : "bg-transparent"
 					}`}
 				>
@@ -120,7 +119,7 @@ export default function SiteHeader() {
 									key={item.label}
 									href={item.href}
 									className={`relative px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 ${
-										isActive ? "text-white" : "text-[#555555] hover:text-white"
+										isActive ? "text-white" : "text-[#9a9a9a] hover:text-white"
 									}`}
 								>
 									{item.label}
@@ -139,7 +138,7 @@ export default function SiteHeader() {
 					<div className="hidden items-center gap-4 md:flex">
 						<Button
 							asChild
-							className="group h-10 rounded-full border border-white/[0.1] bg-white/[0.05] px-6 text-[10px] font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black"
+							className="group h-10 rounded-full border border-white/14 bg-white/[0.07] px-6 text-[10px] font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black"
 						>
 							<Link href="#contact">
 								Let&apos;s Talk
@@ -154,7 +153,7 @@ export default function SiteHeader() {
 								<Button
 									variant="ghost"
 									size="icon"
-									className="h-10 w-10 rounded-full border border-white/10 bg-white/5 text-white"
+									className="h-10 w-10 rounded-full border border-white/14 bg-white/[0.07] text-white"
 								>
 									{mobileOpen ? <X className="size-4" /> : <Menu className="size-4" />}
 								</Button>
@@ -162,8 +161,10 @@ export default function SiteHeader() {
 
 							<DialogContent
 								showCloseButton={false}
-								className="glass animate-in fade-in zoom-in-95 left-auto right-4 top-24 w-[calc(100vw-32px)] max-w-sm rounded-3xl p-4"
+								aria-describedby={undefined}
+								className="glass animate-in fade-in zoom-in-95 right-[max(0.75rem,env(safe-area-inset-right))] top-24 left-auto w-[min(100%,calc(100vw-1.5rem))] max-w-sm translate-x-0 translate-y-0 rounded-3xl p-4 sm:w-[min(100vw-1.5rem,24rem)]"
 							>
+								<DialogTitle className="sr-only">Site navigation</DialogTitle>
 								<nav className="flex flex-col gap-2">
 									{navItems.map((item) => {
 										const isActive =
@@ -174,7 +175,7 @@ export default function SiteHeader() {
 												<Link
 													href={item.href}
 													className={`flex h-14 items-center rounded-2xl px-6 text-sm font-bold uppercase tracking-widest transition-all ${
-														isActive ? "bg-white text-black" : "text-[#888888] hover:bg-white/5 hover:text-white"
+														isActive ? "bg-white text-black" : "text-[#a3a3a3] hover:bg-white/8 hover:text-white"
 													}`}
 												>
 													{item.label}
@@ -185,7 +186,7 @@ export default function SiteHeader() {
 									<DialogClose asChild>
 										<Link
 											href="#contact"
-											className="mt-4 flex h-14 items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-6 text-sm font-bold uppercase tracking-widest text-white"
+											className="mt-4 flex h-14 items-center justify-between rounded-2xl border border-white/14 bg-white/[0.07] px-6 text-sm font-bold uppercase tracking-widest text-white"
 										>
 											Contact
 											<ArrowRight className="h-4 w-4" />

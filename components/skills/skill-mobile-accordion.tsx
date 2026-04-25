@@ -7,7 +7,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SKILLS_MOBILE_BADGE_HEIGHT } from "@/components/skills/constants";
-import type { PortfolioSkillCategory } from "@/lib/portfolio-skills";
+import type { PortfolioSkillCategory } from "@/lib/skills";
 import { cn } from "@/lib/utils";
 
 type SkillMobileAccordionProps = {
@@ -19,7 +19,7 @@ export function SkillMobileAccordion({ categories, className }: SkillMobileAccor
 	return (
 		<div
 			className={cn(
-				"overflow-hidden rounded-sm border border-white/8 bg-[#080808]/80 ring-1 ring-white/6",
+				"overflow-hidden rounded-sm border border-white/14 bg-[#0c0c0c]/90 ring-1 ring-white/10",
 				className,
 			)}
 		>
@@ -29,11 +29,11 @@ export function SkillMobileAccordion({ categories, className }: SkillMobileAccor
 			<Accordion type="multiple" className="w-full">
 				{categories.map((cat) => (
 					<AccordionItem key={cat.id} value={cat.id} className="border-white/8">
-						<AccordionTrigger className="px-4 py-3 text-white hover:no-underline">
+						<AccordionTrigger className="px-5 py-3 text-white hover:no-underline sm:px-4">
 							<span className="font-heading text-sm font-semibold tracking-tight">{cat.label}</span>
 							<span className="ml-2 text-xs text-ink-label">({cat.items.length})</span>
 						</AccordionTrigger>
-						<AccordionContent className="px-3 pb-4 pt-0">
+						<AccordionContent className="px-5 pb-4 pt-0 sm:px-4">
 							<ul className="flex flex-wrap gap-2">
 								{cat.items.map((item) => (
 									<li key={`${cat.id}-${item.name}`} className="list-none">

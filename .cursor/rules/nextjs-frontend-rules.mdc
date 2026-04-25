@@ -1,0 +1,169 @@
+---
+alwaysApply: true
+---
+
+# Cursor Agent Coding Rules (Next.js Frontend)
+
+## 1. Code Consistency
+- Always analyze existing frontend patterns before implementing new code.
+- Match the current conventions exactly:
+  - Component structure (functional components, hooks usage)
+  - Naming (PascalCase for components, camelCase for variables/functions)
+  - Styling approach (CSS Modules, Tailwind, styled-components, etc.)
+  - Data fetching patterns (server actions, React Query, fetch, etc.)
+- Do not introduce new patterns if an equivalent already exists.
+
+---
+
+## 2. Human-like Code Quality
+- Write code as a senior frontend engineer would.
+- Prefer clarity, composability, and predictability.
+- Avoid over-engineering (no unnecessary hooks, abstractions, or memoization).
+- Components should be easy to scan and reason about.
+
+---
+
+## 3. Minimal Changes Principle
+- Avoid modifying unrelated components or files.
+- Keep diffs small and focused.
+- Do not refactor unless required for correctness.
+
+---
+
+## 4. Structural Discipline (Next.js)
+- Follow the project’s routing system:
+  - App Router (`app/`) or Pages Router (`pages/`) as already used.
+- Respect boundaries:
+  - Server Components vs Client Components (`"use client"`)
+- Place logic correctly:
+  - UI → components
+  - State → hooks / state managers
+  - Data fetching → server components / hooks / services
+- Do not mix concerns (UI, state, API logic).
+
+---
+
+## 5. Component Design
+- Prefer small, reusable, composable components.
+- Extract logic into hooks when reused or complex.
+- Avoid deeply nested JSX; break into subcomponents.
+- Keep components focused on a single responsibility.
+
+---
+
+## 6. Naming & Semantics
+- Prefer short, single-word names when they clearly convey intent:
+  - Examples:
+    - `header`, `footer`, `sidebar`
+    - `hero`, `features`, `pricing`
+    - `auth`, `dashboard`, `profile`
+- Use nested structure instead of long names:
+  - Prefer `sections/hero` over `homepage-hero-section`
+- Avoid redundant prefixes/suffixes:
+  - ❌ `user-component`, `header-section`, `button-component`
+  - ✅ `user`, `header`, `button`
+- Use multi-word names only when necessary for clarity:
+  - `user-setting`, `payment-method`
+- Keep naming consistent with existing project structure.
+- Follow next.js naming practice
+
+
+---
+
+## 7. State Management
+- Follow existing state strategy:
+  - React state, Context, Zustand, Redux, etc.
+- Do not introduce new state libraries without strong reason.
+- Keep state minimal and colocated where possible.
+- Avoid prop drilling if the project already uses a shared solution.
+
+---
+
+## 8. Data Fetching & API Usage
+- Follow existing data-fetching approach:
+  - Server Actions / fetch / React Query / SWR
+- Do not mix multiple fetching paradigms arbitrarily.
+- Handle loading, error, and empty states explicitly.
+- Avoid redundant API calls.
+
+---
+
+## 9. Error Handling & UX States
+- Always handle:
+  - Loading states
+  - Error states
+  - Empty states
+- Match existing UI/UX patterns for feedback (spinners, toasts, alerts).
+- Do not silently fail.
+
+---
+
+## 10. Styling
+- Follow the existing styling system strictly:
+  - Tailwind / CSS Modules / styled-components / etc.
+- Do not mix styling approaches.
+- Reuse existing utility classes or design tokens.
+- Keep class names clean and consistent.
+
+---
+
+## 11. Performance Awareness
+- Avoid unnecessary re-renders:
+  - Use memoization only when justified.
+- Lazy load components if already practiced in the codebase.
+- Keep bundle size in mind (avoid heavy dependencies).
+
+---
+
+## 12. Accessibility (a11y)
+- Use semantic HTML elements.
+- Ensure:
+  - Proper labels for inputs
+  - Keyboard accessibility
+  - ARIA attributes when needed
+- Follow existing accessibility patterns if defined.
+
+---
+
+## 13. Dependencies & Imports
+- Reuse existing utilities, hooks, and components.
+- Do not introduce new libraries unless necessary.
+- Keep imports ordered and consistent with the project.
+
+---
+
+## 14. Comments & Documentation
+- Prefer self-documenting code.
+- Add comments only for non-obvious logic.
+- Avoid redundant or obvious comments.
+
+---
+
+## 15. Formatting
+- Follow existing formatting rules (Prettier, ESLint config).
+- Do not reformat unrelated code.
+- Maintain consistent spacing and structure.
+
+---
+
+## 16. Completeness
+- Deliver production-ready code:
+  - No TODOs or placeholders
+  - No incomplete UI states
+- Validate inputs and handle edge cases.
+- Ensure components render safely under all conditions.
+
+---
+
+## 17. Testing Awareness
+- Follow existing testing setup (Jest, RTL, etc.) if present.
+- Ensure components are testable:
+  - Avoid tightly coupled logic
+  - Keep side effects controlled
+
+---
+
+## 18. Respect Existing Logic
+- Do not break existing UI behavior.
+- Assume current patterns are intentional.
+- Only deviate when clearly necessary and justified.

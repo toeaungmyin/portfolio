@@ -22,7 +22,6 @@ export type Project = {
 	subtitle: string;
 	description: string;
 	tags: string[];
-	metrics: { label: string; value: string }[];
 	status?: "live" | "shipped" | "archived" | "wip";
 	dateRange?: string;
 	links?: ProjectLink[];

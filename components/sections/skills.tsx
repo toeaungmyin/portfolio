@@ -1,13 +1,12 @@
-import { SectionIntroStack } from "@/components/shared/section-header";
+import { SectionIntroStack } from "@/components/common/section-header";
 import { SKILLS_CANVAS_HEX, SkillGraphSlot, SkillMobileAccordion } from "@/components/skills";
-import { profile } from "@/lib/data";
-import { portfolioSkillCategories } from "@/lib/portfolio-skills";
+import { portfolioSkillCategories } from "@/lib/skills";
 
 export default function Skills() {
 	return (
 		<section
 			id="skills"
-			className="section-box relative overflow-hidden border-t px-4 py-28 md:py-32"
+			className="section-box relative overflow-hidden border-t px-5 py-16 sm:px-6 sm:py-20 md:py-28 lg:py-32"
 			style={{ backgroundColor: SKILLS_CANVAS_HEX }}
 		>
 			<div

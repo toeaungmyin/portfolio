@@ -1,38 +1,37 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/lib/data";
-import { SectionHeader } from "@/components/shared/section-header";
-import { CardBody } from "@/components/shared/ledger-card";
+import { SectionHeader } from "@/components/common/section-header";
+import { CardBody } from "@/components/common/ledger-card";
 import { revealTransition, viewportReveal } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const MotionLink = motion.create(Link);
 
 const cardClass = cn(
-	"group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0a0a0a]",
+	"group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/14 bg-[#0c0c0c]",
 	"outline-offset-4 transition-all duration-500 ease-out",
 	"hover:-translate-y-1 hover:border-white/18 hover:shadow-[0_28px_56px_-28px_rgba(0,0,0,0.9)]"
 );
 
 export default function Projects() {
 	return (
-		<section id="projects" className="section-box bg-black py-32">
-			<div className="mx-auto max-w-6xl px-4">
+		<section id="projects" className="section-box bg-black py-16 sm:py-24 lg:py-32">
+			<div className="mx-auto max-w-6xl px-5 sm:px-6">
 				<SectionHeader
 					eyebrow="Project Ledger"
 					title={
 						<>
-							Architectural <span className="text-[#111111]">Showcase</span>
+							Architectural <span className="text-white/45">Showcase</span>
 						</>
 					}
 					description="Deep dives into high-performance applications and robust backend systems I've engineered."
 				/>
 
-				<div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
+				<div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3 md:gap-6">
 					{profile.projects.map((project, index) => (
 						<MotionLink
 							key={project.id}
@@ -70,31 +69,11 @@ export default function Projects() {
 									<h3 className="mb-5 text-xl font-black leading-[1.1] tracking-tighter text-white sm:text-2xl">
 										{project.title}
 									</h3>
-									<p className="mb-8 line-clamp-4 text-[15px] font-light leading-relaxed text-[#8a8a8a] sm:line-clamp-5">
+									<p className="mb-8 line-clamp-4 text-[15px] font-light leading-relaxed text-[#b0b0b0] sm:line-clamp-5">
 										{project.description}
 									</p>
 
-									<div className="mt-auto border-t border-white/10 pt-6">
-										<div className="flex flex-col gap-5 sm:flex-row sm:items-stretch sm:gap-0">
-											{project.metrics.map((metric, idx) => (
-												<React.Fragment key={`${project.id}-${metric.label}`}>
-													{idx > 0 ? (
-														<div className="hidden w-px shrink-0 bg-white/10 sm:block" aria-hidden />
-													) : null}
-													<div className="min-w-0 flex-1 sm:px-4 first:sm:pl-0 last:sm:pr-0">
-														<p className="mb-1 text-[9px] font-black uppercase tracking-[0.22em] text-ink-eyebrow">
-															{metric.label}
-														</p>
-														<p className="text-lg font-bold tracking-tight text-white sm:text-xl">
-															{metric.value}
-														</p>
-													</div>
-												</React.Fragment>
-											))}
-										</div>
-									</div>
-
-									<div className="mt-6 flex flex-wrap gap-2">
+									<div className="mt-auto flex flex-wrap gap-2 border-t border-white/14 pt-5">
 										{project.tags.map((tag) => (
 											<span
 												key={tag}

@@ -14,14 +14,14 @@ type PageProps = {
 
 function SectionTitle({ children }: { children: ReactNode }) {
 	return (
-		<h2 className="mb-4 text-[11px] font-black uppercase tracking-[0.32em] text-neutral-400">{children}</h2>
+		<h2 className="mb-4 text-[11px] font-black uppercase tracking-[0.32em] text-neutral-300">{children}</h2>
 	);
 }
 
 function Prose({ children, className }: { children: ReactNode; className?: string }) {
 	return (
 		<div
-			className={`text-[16px] sm:text-[17px] font-light leading-[1.75] text-neutral-300 antialiased ${className ?? ""}`}
+			className={`text-[16px] sm:text-[17px] font-light leading-[1.75] text-neutral-200 antialiased ${className ?? ""}`}
 		>
 			{children}
 		</div>
@@ -73,11 +73,11 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 	const hasUi = Boolean(project.coverImage || galleryItems.length > 0);
 
 	return (
-		<div className="min-h-screen bg-black pt-28 pb-24 px-4">
+		<div className="min-h-dvh bg-black px-5 pb-[max(5rem,env(safe-area-inset-bottom))] pt-[max(6.5rem,env(safe-area-inset-top))] sm:px-6 sm:pb-24 sm:pt-28">
 			<div className="mx-auto max-w-3xl">
 				<Link
 					href="/#projects"
-					className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-neutral-400 hover:text-white transition-colors mb-16"
+					className="mb-8 inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-neutral-300 transition-colors hover:text-white sm:mb-12 md:mb-16"
 				>
 					<ArrowLeft className="w-3 h-3" />
 					All projects
@@ -87,10 +87,10 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 					<h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-white leading-[0.95] mb-4 font-heading text-balance">
 						{project.title}
 					</h1>
-					<p className="text-xs sm:text-sm font-semibold text-neutral-400 uppercase tracking-[0.22em] mb-4 max-w-2xl leading-snug">
+					<p className="text-xs sm:text-sm font-semibold text-neutral-300 uppercase tracking-[0.22em] mb-4 max-w-2xl leading-snug">
 						{project.subtitle}
 					</p>
-					<div className="mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+					<div className="mb-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
 						{project.status ? <span>Status: {project.status}</span> : null}
 						{project.dateRange ? <span>{project.dateRange}</span> : null}
 					</div>
@@ -113,7 +113,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 									href={link.href}
 									target="_blank"
 									rel="noreferrer"
-									className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/4 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-white/90 transition-colors hover:border-white/25 hover:bg-white/7"
+									className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/[0.06] px-4 py-2 text-[10px] font-black uppercase tracking-widest text-white/95 transition-colors hover:border-white/30 hover:bg-white/10"
 								>
 									{link.label}
 									<ExternalLink className="h-3 w-3 opacity-60" />
@@ -129,7 +129,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 						<div className="space-y-8">
 							{project.coverImage ? (
 								<figure className="space-y-3">
-									<div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-[#080808]">
+									<div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/14 bg-[#0c0c0c]">
 										<Image
 											src={project.coverImage}
 											alt={`${project.title} — primary screen`}
@@ -140,8 +140,8 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 											unoptimized
 										/>
 									</div>
-									<figcaption className="text-center text-xs text-neutral-500">
-										<span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+									<figcaption className="text-center text-xs text-neutral-400">
+										<span className="text-[10px] font-bold uppercase tracking-widest text-neutral-300">
 											Primary screen
 										</span>
 									</figcaption>
@@ -154,8 +154,8 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 										<div
 											className={
 												isMobile
-													? "relative mx-auto w-full max-w-[min(100%,320px)] overflow-hidden rounded-2xl border border-white/10 bg-[#080808] aspect-9/19 sm:max-w-[360px] sm:aspect-9/18.5"
-													: "relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-[#080808]"
+													? "relative mx-auto w-full max-w-[min(100%,320px)] overflow-hidden rounded-2xl border border-white/14 bg-[#0c0c0c] aspect-9/19 sm:max-w-[360px] sm:aspect-9/18.5"
+													: "relative aspect-video w-full overflow-hidden rounded-2xl border border-white/14 bg-[#0c0c0c]"
 											}
 										>
 											<Image
@@ -171,12 +171,12 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 												unoptimized
 											/>
 										</div>
-										<figcaption className="text-center text-xs text-neutral-500">
-											<span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block mb-1">
+										<figcaption className="text-center text-xs text-neutral-400">
+											<span className="text-[10px] font-bold uppercase tracking-widest text-neutral-300 block mb-1">
 												{item.alt}
 											</span>
 											{item.caption ? (
-												<span className="font-light text-neutral-400">{item.caption}</span>
+												<span className="font-light text-neutral-300">{item.caption}</span>
 											) : null}
 										</figcaption>
 									</figure>

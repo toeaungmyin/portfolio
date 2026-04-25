@@ -4,9 +4,9 @@ import React, { useId, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/shared/section-header";
-import { CardBody, shellClass } from "@/components/shared/ledger-card";
-import { IconGitHub, IconLinkedIn } from "@/components/shared/social-icons";
+import { SectionHeader } from "@/components/common/section-header";
+import { CardBody, shellClass } from "@/components/common/ledger-card";
+import { IconGitHub, IconLinkedIn } from "@/components/common/social-icons";
 import { cn, withHttps } from "@/lib/utils";
 import { profile } from "@/lib/data";
 import { EASE_OUT_STRONG, viewportReveal } from "@/lib/motion";
@@ -22,7 +22,7 @@ export default function Contact() {
 	const messageId = useId();
 
 	const inputClass =
-		"w-full rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 text-sm font-light text-white transition-all placeholder:text-ink-placeholder focus:border-white/25 focus:outline-none sm:px-6 sm:py-4";
+		"w-full rounded-xl border border-white/14 bg-white/[0.07] px-5 py-3.5 text-sm font-light text-white transition-all placeholder:text-ink-placeholder focus:border-white/30 focus:outline-none sm:px-6 sm:py-4";
 
 	function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
@@ -40,13 +40,13 @@ export default function Contact() {
 	}
 
 	return (
-		<section id="contact" className="section-box relative border-t bg-black py-32">
-			<div className="mx-auto max-w-6xl px-4">
+		<section id="contact" className="section-box relative border-t bg-black py-16 sm:py-24 lg:py-32">
+			<div className="mx-auto max-w-6xl px-5 sm:px-6">
 				<SectionHeader
 					eyebrow="Final Interaction"
 					title={
 						<>
-							Start the <span className="text-[#111111]">conversation</span>
+							Start the <span className="text-white/45">conversation</span>
 						</>
 					}
 					description="Currently seeking opportunities to apply backend architectural skills to ambitious teams. Reach out via email, phone, socials, or the form."
@@ -58,13 +58,13 @@ export default function Contact() {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={viewportReveal}
 						transition={{ duration: 0.65, ease: EASE_OUT_STRONG }}
-						className="divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10 bg-[#080808] lg:col-span-5"
+						className="divide-y divide-white/14 overflow-hidden rounded-xl border border-white/14 bg-[#0c0c0c] lg:col-span-5"
 					>
 						<a
 							href={`mailto:${profile.contact.email}`}
 							className="group flex items-center gap-5 px-5 py-6 transition-colors hover:bg-white/2 sm:px-8 sm:py-7"
 						>
-							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
+							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/14 bg-white/[0.07] text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
 								<Mail className="h-5 w-5" aria-hidden />
 							</div>
 							<div className="min-w-0">
@@ -77,7 +77,7 @@ export default function Contact() {
 
 						<div className="group px-5 py-6 transition-colors hover:bg-white/2 sm:px-8 sm:py-7">
 							<div className="flex items-start gap-5">
-								<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
+								<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/14 bg-white/[0.07] text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
 									<Phone className="h-5 w-5" aria-hidden />
 								</div>
 								<div className="min-w-0 flex-1">
@@ -103,7 +103,7 @@ export default function Contact() {
 							rel="noopener noreferrer"
 							className="group flex items-center gap-5 px-5 py-6 transition-colors hover:bg-white/2 sm:px-8 sm:py-7"
 						>
-							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
+							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/14 bg-white/[0.07] text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
 								<Send className="h-5 w-5" aria-hidden />
 							</div>
 							<div className="min-w-0">
@@ -120,7 +120,7 @@ export default function Contact() {
 							rel="noopener noreferrer"
 							className="group flex items-center gap-5 px-5 py-6 transition-colors hover:bg-white/2 sm:px-8 sm:py-7"
 						>
-							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
+							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/14 bg-white/[0.07] text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
 								<IconLinkedIn className="h-5 w-5" aria-hidden />
 							</div>
 							<div className="min-w-0">
@@ -137,7 +137,7 @@ export default function Contact() {
 							rel="noopener noreferrer"
 							className="group flex items-center gap-5 px-5 py-6 transition-colors hover:bg-white/2 sm:px-8 sm:py-7"
 						>
-							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
+							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/14 bg-white/[0.07] text-ink-label transition-colors duration-500 group-hover:border-white/18 group-hover:text-white">
 								<IconGitHub className="h-5 w-5" aria-hidden />
 							</div>
 							<div className="min-w-0">

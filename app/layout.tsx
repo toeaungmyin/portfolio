@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={cn("h-full", "antialiased", inter.variable, outfit.variable, "font-sans")}>
-			<body className="dark min-h-full flex flex-col bg-black text-white selection:bg-white selection:text-black">
+			<body className="dark flex min-h-dvh flex-col overflow-x-hidden bg-black pl-[max(0px,env(safe-area-inset-left))] pr-[max(0px,env(safe-area-inset-right))] text-white selection:bg-white selection:text-black">
 				<SiteJsonLd />
 				<Analytics />
 				<SpeedInsights />

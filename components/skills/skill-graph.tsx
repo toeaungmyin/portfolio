@@ -1,16 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef, type RefObject } from "react";
-import {
-	Background,
-	Controls,
-	ReactFlow,
-	ReactFlowProvider,
-	useReactFlow,
-} from "@xyflow/react";
+import { Background, ReactFlow, ReactFlowProvider, useReactFlow } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { buildSkillGraph } from "@/lib/skills-graph-build";
-import { portfolioSkillCategories } from "@/lib/portfolio-skills";
+import { buildSkillGraph, portfolioSkillCategories } from "@/lib/skills";
 import { cn } from "@/lib/utils";
 import { skillsGraphFitViewOptions, skillsGraphViewportClassName } from "@/components/skills/constants";
 import { skillGraphNodeTypes } from "@/components/skills/skill-graph-nodes";
@@ -76,8 +69,8 @@ export default function SkillGraph() {
 					{/* <Controls
 						showInteractive={false}
 						className={cn(
-							"!m-3 !overflow-hidden !rounded-md !border !border-white/10 !bg-[#0a0a0a]/95 !shadow-none",
-							"[&_button]:!h-8 [&_button]:!w-8 [&_button]:!border-white/10 [&_button]:!bg-transparent",
+							"!m-3 !overflow-hidden !rounded-md !border !border-white/14 !bg-[#0c0c0c]/95 !shadow-none",
+							"[&_button]:!h-8 [&_button]:!w-8 [&_button]:!border-white/14 [&_button]:!bg-transparent",
 							"[&_button]:!fill-white/75 [&_button:hover]:!bg-white/6",
 						)}
 					/> */}
