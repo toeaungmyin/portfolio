@@ -6,6 +6,7 @@ import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/lib/data";
 import { EASE_OUT_STRONG, introTransition } from "@/lib/motion";
+import { Hatch } from "@/components/common/hatch";
 
 const ROLE_CYCLE_MS = 3200;
 

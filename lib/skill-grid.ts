@@ -30,6 +30,7 @@ const SKILL_ICONS: Readonly<SkillIconItem[]> = [
 	{ id: "mysql", name: "MySQL", iconSrc: icon("mysql.png") },
 	{ id: "mongodb", name: "MongoDB", iconSrc: icon("mongodb.png") },
 	{ id: "prisma", name: "Prisma ORM", iconSrc: icon("prisma.png") },
+	{ id: "cursor", name: "Cursor", iconSrc: icon("cursor.png") },
 ] as const;
 
 export function getSkillIconGridItems(): SkillIconItem[] {

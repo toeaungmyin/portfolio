@@ -6,6 +6,7 @@ import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useSiteHeader } from "@/hooks/use-site-header";
+import { Hatch } from "../common/hatch";
 
 export default function SiteHeader() {
 	const { headerRef, mobileOpen, setMobileOpen, activeKey, scrolled, navItems, pathname } =
@@ -36,7 +37,8 @@ export default function SiteHeader() {
 					<nav className="hidden items-center gap-1 md:flex" aria-label="Portfolio navigation">
 						{navItems.map((item) => {
 							const isActive =
-								activeKey === item.anchorId || (item.pagePrefix && pathname?.startsWith(item.pagePrefix));
+								activeKey === item.anchorId ||
+								(item.pagePrefix && pathname?.startsWith(item.pagePrefix));
 							return (
 								<Link
 									key={item.label}
@@ -98,7 +100,9 @@ export default function SiteHeader() {
 												<Link
 													href={item.href}
 													className={`flex h-14 items-center rounded-2xl px-6 text-sm font-bold uppercase tracking-widest transition-all ${
-														isActive ? "bg-secondary text-white" : "text-[#a3a3a3] hover:bg-secondary/10 hover:text-secondary"
+														isActive
+															? "bg-secondary text-white"
+															: "text-[#a3a3a3] hover:bg-secondary/10 hover:text-secondary"
 													}`}
 												>
 													{item.label}

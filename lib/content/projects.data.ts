@@ -6,29 +6,73 @@ export const projects = [
 		title: "UCSM FRWC 2026",
 		subtitle: "University Fresher Welcome Voting System",
 		description:
-			"UCSM FRWC 2026 is a production web app for a university fresher welcome: students vote in real time for king, queen, and other categories during a short, high-energy event window.\nThe product replaces slow paper or improvised counts with one digital flow so turnout stays high and results stay visible to the crowd.\nStaff use an admin area to manage candidates, monitor participation, and correct issues without stopping the show.\nThe implementation targets a sharp traffic spike—consistent vote writes, duplicate protection, and quick updates to the public UI—not a low-traffic brochure site.\nIt runs on a TypeScript React front end, an Express and Prisma API on PostgreSQL, and Docker with Nginx; the live run handled hundreds of concurrent voters with no downtime.",
+			"The UCSM FRWC 2026 is a high-performance, real-time voting application engineered for the Fresher Welcome event at the University of Computer Studies, Mandalay, held on January 6, 2026. Designed to replace traditional paper ballots with a seamless digital flow, the system supported over 300 students and faculty members during a high-energy live event window. The platform featured a secure authentication system via unique voting tickets and a robust administrative suite that allowed staff to manage candidates and monitor live participation without interrupting the ceremony.To meet an aggressive two-week development timeline—moving from initial conception in late December to a production-ready launch in the first week of January—the workflow integrated AI agents to accelerate coding, debugging, and architectural planning. This rapid-response approach was backed by a technical stack featuring React and TypeScript for the frontend, with Node.js, Express, and Prisma (PostgreSQL) powering the backend. The entire infrastructure was containerized with Docker and Docker Compose and deployed on a Contabo VPS using Nginx, ensuring a stable, zero-downtime experience during the peak traffic spikes of the live event.",
 		tags: ["Full-stack", "Real-time", "PostgreSQL", "Docker", "Event"],
 		status: "live",
 		dateRange: "Dec 2025 – Jan 2026",
 		links: [
-			{ label: "Live", href: "https://ucsmfrwc.toeaungmyin.me" },
-			{ label: "Source", href: "https://github.com/toeaungmyin/ucsm-frwc-2026" },
+			{ label: "Public", href: "https://ucsmfrwc.toeaungmyin.me" },
+			{ label: "Admin", href: "https://ucsmfrwc.toeaungmyin.me/admin" },
+			{ label: "Code", href: "https://github.com/toeaungmyin/ucsm-frwc-2026" },
 		],
+		liveDemo: {
+			intro: "Scan or test with the sample ticket on the public app, or use the admin login for the dashboard.",
+			ticketImage: "/projects/ucsm-frwc-2026/test-voting-ticket.png",
+			ticketImageAlt: "Sample voting ticket (QR) for the live app",
+			ticketHint: "Scan the ticket to vote",
+			adminHint: "Sign in on the live site (admin / staff area) with:",
+			adminUsername: "admin",
+			adminPassword: "password",
+		},
 		stack: {
-			frontend: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "TanStack Query"],
-			backend: ["Node.js", "Express 5", "Prisma", "PostgreSQL", "JWT"],
+			frontend: [
+				"React",
+				"TypeScript",
+				"Vite",
+				"Tailwind CSS",
+				"Flowbite",
+				"TanStack Query",
+				"TanStack Router",
+				"React Hook Form",
+				"Zod",
+				"Zustand",
+				"Axios",
+			],
+			backend: [
+				"Node.js",
+				"Express",
+				"TypeScript",
+				"Prisma",
+				"PostgreSQL",
+				"JWT",
+				"Helmet",
+				"Zod",
+				"Vercel Blob",
+			],
 			devops: ["Docker", "Docker Compose", "Nginx"],
 		},
-		problem:
-			"In-person events need fast, fair digital voting at high concurrency without duplicate votes or stale counts.",
-		solution:
-			"Full-stack on a small team: Express and Prisma on PostgreSQL, React client with TanStack Query for live counts, Zod-backed forms, and Docker/Nginx for deploy. Admin flows for candidates and monitoring. Ran at 300+ concurrent users with zero downtime and sub-second vote handling.",
 		coverImage: "/projects/ucsm-frwc-2026/cover.jpg",
 		gallery: [
 			{
-				src: "/projects/ucsm-frwc-2026/screen1.jpg",
-				alt: "Voting UI",
-				caption: "Mobile voting flow",
+				src: "/projects/ucsm-frwc-2026/ucsm-frwc-dashboard.png",
+				alt: "Live dashboard",
+				caption: "Real-time results and event monitoring in the staff view",
+			},
+			{
+				src: "/projects/ucsm-frwc-2026/ucsm-frwc-voting-statistics.png",
+				alt: "Voting statistics",
+				caption: "Category and turnout breakdowns during the event",
+			},
+			{
+				src: "/projects/ucsm-frwc-2026/ucsm-frwc-mobile-home.png",
+				alt: "Voting home",
+				caption: "Mobile entry and category selection",
+				layout: "mobile",
+			},
+			{
+				src: "/projects/ucsm-frwc-2026/ucsm-frwc-mobile-candidate.png",
+				alt: "Candidate view",
+				caption: "Mobile candidate detail and vote action",
 				layout: "mobile",
 			},
 		],
@@ -38,9 +82,9 @@ export const projects = [
 		title: "UniVibe",
 		subtitle: "University Social Network",
 		description:
-			"UniVibe is a campus social network delivered as three parts: a Laravel API, a React SPA for students, and a second React SPA for administrators.\nPostgreSQL holds application data; Passport cover API and SPA-style auth, and Spatie permissions model roles as features accumulate.\nAn optional Docker Compose stack puts Nginx in front so `/`, `/admin/`, and `/api/` can share one host, which keeps CORS, cookies, and large uploads simpler for both clients.\nRealtime can be added with Laravel Reverb or Pusher when feeds or notifications need push-style updates.\nI led architecture and integration across the repos—from schema and auth to proxy routing and how each app is run locally or in containers.",
-		tags: ["Full-stack", "Laravel", "React", "PostgreSQL", "Docker", "Lead"],
-		status: "shipped",
+			"UniVibe is a comprehensive campus social platform developed by a collaborative four-member team as a core academic project. Modeled after industry-leading social networks, the system is architected as a decoupled ecosystem featuring a centralized Laravel API server and two specialized React-based Progressive Web Apps (PWAs) for students and administrators. The client-side experience focuses on high engagement, featuring a dynamic News Feed with real-time reactions and comments, a private Real-Time Chat system, and integrated Push Notifications for seamless updates. To maintain community standards, the platform includes a robust Profile Management suite and a dedicated Reporting System for user-generated content.The Admin Dashboard serves as the command center for platform health, providing tools for real-time monitoring and user management. This includes advanced Report Analysis workflows where administrators can issue warnings or enact bans on users and posts to ensure a safe campus environment. The entire infrastructure is designed for streamlined deployment, utilizing Docker Compose and Nginx to manage proxy routing across the API and both PWAs, simplifying authentication and CORS management across the platform.",
+		tags: ["Full-stack", "Laravel", "React", "PostgreSQL", "Docker", "Team Project"],
+		status: "archived",
 		links: [
 			{ label: "API", href: "https://github.com/toeaungmyin/univibe-server" },
 			{ label: "User", href: "https://github.com/toeaungmyin/univibe-user" },
@@ -51,10 +95,6 @@ export const projects = [
 			backend: ["Laravel 10", "PHP 8.2", "Passport & Sanctum", "Spatie Permission", "PostgreSQL"],
 			devops: ["Docker Compose", "Nginx"],
 		},
-		problem:
-			"A campus product needs one coherent auth and API story across a public app, an admin app, and large uploads—without a tangle of cross-origin config.",
-		solution:
-			"Led architecture across repos (API, user SPA, admin SPA, Nginx config): Laravel 10 with Vite, Passport, Sanctum, and Spatie on PostgreSQL; React 18 CRAs with Redux Toolkit. Docker Compose + Nginx routes `/`, `/admin/`, and `/api/` so the full stack can share one origin; optional Reverb/Pusher for realtime.",
 		coverImage: "/projects/univibe/user.png",
 		gallery: [
 			{
@@ -78,10 +118,6 @@ export const projects = [
 			backend: ["Laravel 11", "Laravel Breeze", "Eloquent", "SQLite", "PHP 8.2"],
 			devops: ["Laravel Pint", "PHPUnit"],
 		},
-		problem:
-			"Teaching software needs clear public, student, and staff areas with enrollment, progress, and exams modeled without redundant tables.",
-		solution:
-			"Solo Laravel 11 app: Breeze auth with verification, Admin vs Client controllers and role middleware, Blade with Tailwind, Alpine, Flowbite, and Vite. Course-centric schema (chapters, assignments, question bank) with enrollment and progress on `course_has_students`; exams scoped per enrollment row; events for announcements. Pint and PHPUnit for quality.",
 		coverImage: "/projects/i-lms/landing-page.png",
 		gallery: [
 			{
